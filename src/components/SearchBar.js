@@ -2,6 +2,8 @@ import * as React from "react";
 import {connect} from "react-redux";
 import '../styles/SearchBar.scss';
 import {Actions} from '../constants/Actions';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimes} from '@fortawesome/free-solid-svg-icons';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -16,7 +18,9 @@ class SearchBar extends React.Component {
                        value={this.props.searchTerm}
                        onChange={(e) => this.props.setSearchTerm(e.target.value)}
                 />
-                <button className="btn clear" onClick={this.props.clearSearch}>X</button>
+                <button className="btn clear" onClick={this.props.clearSearch}>
+                    <FontAwesomeIcon icon={faTimes}/>
+                </button>
             </div>
         </div>);
     }
